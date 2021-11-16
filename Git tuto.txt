@@ -1,0 +1,6 @@
+git init
+git remote add origin repository_URL
+git push origin master/main
+git add .
+git commit -m "commit_name"
+git push origin master
