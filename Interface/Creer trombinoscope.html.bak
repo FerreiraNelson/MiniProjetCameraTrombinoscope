@@ -1,0 +1,177 @@
+<?php
+//if download button clicked
+if(isset($_POST['downloadBtn'])){
+    //getting the user img url from input field
+    $imgURL = $_POST['file']; //storing in variable
+    $regPattern = '/\.(jpe?g|png|gif|bmp)$/i'; //pattern to validataing img extension
+    if(preg_match($regPattern, $imgURL)){ //if pattern matched to user img url
+        $initCURL = curl_init($imgURL); //intializing curl
+        curl_setopt($initCURL, CURLOPT_RETURNTRANSFER, true);
+        $downloadImgLink = curl_exec($initCURL); //executing curl
+        curl_close($initCURL); //closing curl
+        // now we convert the base 64 format to jpg to download
+        header('Content-type: image/jpg'); //in which extension you want to save img
+        header('Content-Disposition: attachment;filename="image.jpg"'); //in which name you want to save img
+        echo $downloadImgLink;
+    }
+}
+?>
+<!DOCTYPE HTML>
+<html>
+<script src="mesfonctionscamera.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<head class="bordure_header">
+	<title>Ben&To Event</title>
+
+</head>
+
+<header class="bordure_header">
+	<img class="img_logo" src="image/logocompany.png">
+
+	<nav class="nav_header"><a class="accueil boxaccueil" href="accueil.html">Accueil</a><a class="cmdcam boxcam"  href="camera.html">Caméra</a><a class="cmclasses boxclasses" href="Voir trombinoscope.html">Voir Trombinoscopes</a>
+	</nav>	
+</header>
+		
+
+	<body>
+		<section>
+			<center>
+	    <div class="contentarea">
+        <div class="camera">
+            <video id="video">Video stream not available.</video>
+        </div>
+        <div><button id="startbutton">Take photo</button></div>
+        <canvas id="canvas"></canvas>
+        <div class="output">
+            <img id="photo" alt="The screen capture will appear in this box.">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<button type="submit" onclick="window.open('your_file_name.doc')">Enregistrer</button>
+        </div>
+	
+    </div>
+    </div>
+
+    <script>
+    (function() {
+
+        var width = 320; 
+        var height = 0;
+
+        var streaming = false;
+
+        var video = null;
+        var canvas = null;
+        var photo = null;
+        var startbutton = null;
+
+        function startup() {
+            video = document.getElementById('video');
+            canvas = document.getElementById('canvas');
+            photo = document.getElementById('photo');
+            startbutton = document.getElementById('startbutton');
+
+            navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: false
+                })
+                .then(function(stream) {
+                    video.srcObject = stream;
+                    video.play();
+                })
+                .catch(function(err) {
+                    console.log("An error occurred: " + err);
+                });
+
+            video.addEventListener('canplay', function(ev) {
+                if (!streaming) {
+                    height = video.videoHeight / (video.videoWidth / width);
+
+                    if (isNaN(height)) {
+                        height = width / (4 / 3);
+                    }
+
+                    video.setAttribute('width', width);
+                    video.setAttribute('height', height);
+                    canvas.setAttribute('width', width);
+                    canvas.setAttribute('height', height);
+                    streaming = true;
+                }
+            }, false);
+
+            startbutton.addEventListener('click', function(ev) {
+                takepicture();
+                ev.preventDefault();
+            }, false);
+
+            clearphoto();
+        }
+
+
+        function clearphoto() {
+            var context = canvas.getContext('2d');
+            context.fillStyle = "#AAA";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            var data = canvas.toDataURL('image/png');
+            photo.setAttribute('src', data);
+        }
+
+        function takepicture() {
+            var context = canvas.getContext('2d');
+            if (width && height) {
+                canvas.width = width;
+                canvas.height = height;
+                context.drawImage(video, 0, 0, width, height);
+
+                var data = canvas.toDataURL('image/png');
+                photo.setAttribute('src', data);
+            } else {
+                clearphoto();
+            }
+        }
+
+        window.addEventListener('load', startup, false);
+    })();
+
+let btnDownload = document.querySelector('button');
+let img = document.querySelector('img');
+// Must use FileSaver.js 2.0.2 because 2.0.3 has issues.
+btnDownload.addEventListener('click', () => {
+    let imagePath = img.getAttribute('src');
+    let fileName = getFileName(imagePath);
+    saveAs(imagePath, fileName);
+});
+(function getFileName(str) {
+    return str.substring(str.lastIndexOf('/') + 1)
+});	
+	</script>
+	</center>
+<div id="inscription"> 
+	<h1>Formulaire d'inscription</h1> 
+	<h3> Identifiez-vous ! </h3>
+	<form class="texte_div" action="letrombinoscope.php" method="post">
+	<label for="lname">Nom :</label>
+	<input type="text" id="lname" class="style_input" name="lname" required>
+	<label for="fname">Prénom :</label>
+	<input type="text" id="fname" class="style_input" name="fname" required>
+	<label for="email">Adresse mail :</label>
+	<input type="email" id="email" class="style_input" name="email" required>
+	<label for="birthday">Date de naissance :</label>
+	<input type="date" id="birthday" class="style_input" name="birthday" required>
+	<input type="submit" id="divbutton" class="valider style_button" value="M'inscrire" name="inscription">
+	</form>
+	</div>
+	
+
+		</section>
+		
+		<aside> 	
+		</aside>
+	</body>
+
+<footer class="footer bordure_footer">
+<a class="apropos boxapropos" href="apropos.html">À propos</a> <a class="contact boxcontact" href="contact.html">Contact</a><a class="partenaire boxpartenaire" href="partenaire.html">Partenaire</a>
+</footer>
+
+</html>

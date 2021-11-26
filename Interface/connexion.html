@@ -16,17 +16,14 @@
 <body>
 		<section>
 		<center>
-			<form action="connexion.php" method="post">
-				<div>
-					<label for="name">Identifiant :</label>
-					<input type="text" placeholder="Entrer l'identifiant" id="name" name="user_name" required>
-				</div>
-				<div>
-					<label for="pass">Mot de passe :</label>
-					<input type="password" placeholder="Entrer le mot de passe" id="password" name="password" required>
-				</div>
-				<input type="submit" name="connexion" value="Connexion" />
-			</form>
+	<h3> Connectez-vous ! </h3>
+	<form class="texte_div" action="rest.php" method="post">
+	<label for="username">Pseudo :</label>
+	<input type="text" id="username" class="style_input" name="username">
+	<label for="psw">Mot de passe :</label>
+	<input type="password" id="psw" class="style_input" name="psw">
+	<input type="submit" name="validForm" id="divbutton1" class="valider style_button fond_bleu" value="Se connecter">
+	</form>
 		</center>
 		</section>
 

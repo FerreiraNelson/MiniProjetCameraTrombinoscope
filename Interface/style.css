@@ -287,16 +287,15 @@ text-align: center;
         width: 320px;
         height: 240px;
     }
-
-    #photo {
+#photo {
         border: 1px solid black;
         width: 320px;
         height: 240px;
-    }
+}
 
-    #canvas {
+ #canvas {
         display: none;
-    }
+ }
 
     .camera {
         width: 340px;
@@ -328,3 +327,4 @@ text-align: center;
         text-align: center;
         display: box;
     }
+	
