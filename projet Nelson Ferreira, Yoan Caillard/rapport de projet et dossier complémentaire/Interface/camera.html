@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<html>
+<link rel="stylesheet" href="style.css">
+<head class="bordure_header">
+	<title>Ben&To Event</title>
+
+</head>
+
+<header class="bordure_header">
+	<img class="img_logo" src="image/logocompany.png">
+
+	<nav class="nav_header"><a class="accueil boxaccueil" href="accueil.html">Accueil</a><a class="connexion boxconnexion" href="connexion.html">Connnexion</a>
+	</nav>	
+</header>
+		
+
+	<body>
+		<section>
+	<center>
+	<div id="container">
+		<video autoplay="true"></video>
+	</div>
+	<button class="btn" onclick="startWebCam()">Start</button>
+	<script type="text/javascript">
+		var video = document.querySelector("video");
+		function startWebCam() {
+			if (navigator.mediaDevices.getUserMedia) {
+				navigator.mediaDevices.getUserMedia({ video: true })
+			    	.then(function (stream) {
+			      		video.srcObject = stream;
+			    	})
+			    	.catch(function (err0r) {
+			      		console.log("Something went wrong!");
+			    	});
+			}
+		}
+		startWebCam();
+	</script>
+	<button class="btn" onclick="stopWebCam()">Stop</button>
+	<script type="text/javascript">
+			function stopWebCam() {
+const video = document.querySelector("video");
+const mediaStream = video.srcObject;
+const tracks = mediaStream.getTracks();
+tracks[0].stop();
+track.stop();
+}
+		stopWebCam();
+	</script>
+	</center>
+		</section>
+		
+		<aside> 	
+		</aside>
+	</body>
+
+<footer class="footer bordure_footer">
+<a class="apropos boxapropos" href="apropos.html">À propos</a> <a class="contact boxcontact" href="contact.html">Contact</a><a class="partenaire boxpartenaire" href="partenaire.html">Partenaire</a>
+</footer>
+
+</html>
+</html>

@@ -1,0 +1,330 @@
+body{
+	margin: 0 ;
+}
+
+.bordure_footer{
+	background-color: #DCDCDC;
+	margin-top: auto;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+
+}
+
+.img_logo{
+	width: 400px;
+	border-right: 5px solid red;
+	border-left: 5px solid red;
+	border-top: 5px solid red;
+	display: block;
+ 	margin-left: auto;
+  	margin-right: auto;
+}
+
+.logoleap{
+	width: 300px;
+	margin: 5px;
+	  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center{
+	text-align: center;
+}
+
+.logopgytech{
+	width: 300px;
+	  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logologitech{
+	width: 300px;
+	  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bordure_header{
+	width: 100%;
+	background-color: #D3D3D3;
+	border-bottom: 2px solid black;
+	padding-left: 1px solid black;
+
+}
+
+.nav_header{
+	display: inline-block;
+    width: 100%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    text-align: center;
+    background-color: red;
+}
+.footer{
+	display: inline-block;
+    width: 100%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    text-align: center;
+}
+.bordure_footer{
+    
+    width: 100%;
+    padding-bottom: 25px;
+    padding-top: 25px;
+	display: inline-block;
+    text-align: center;
+}
+
+.leapmotion{
+	text-decoration: none;
+	color: #5daa00;
+	text-align: center;
+
+}
+.leapmotion:hover{
+	color: #5daa00;
+	text-decoration: underline dotted #5daa00;
+}
+
+.pgytech{
+	color: black;
+	text-decoration: none;
+	text-align: center;
+}
+.pgytech:hover{
+	color: black;
+	text-decoration: underline ;
+}
+.logitech{
+	color: 	#00BFFF;
+	text-decoration: none;
+	text-align: center ;
+}
+.logitech:hover{
+	color: #00BFFF;
+	text-decoration: underline wavy  #00BFFF;
+}
+
+
+.connexion{
+	text-decoration: none;
+}
+.connexion:hover{
+    color: white ;
+}
+
+.partenaire
+{
+text-decoration: none;	
+}
+.partenaire:hover
+{
+
+    color:	black;
+}
+
+.accueil{
+text-decoration: none;	
+}
+.accueil:hover
+{
+
+    color:	white;
+}
+
+.contact{
+text-decoration: none;	
+}
+.contact:hover
+{
+
+    color:	black;
+}
+
+.apropos{
+text-decoration: none;	
+}
+.apropos:hover
+{
+
+    color:	black;
+}
+
+
+.cmclasses{
+	text-decoration: none;
+}
+.cmclasses:hover{
+    color:	white;
+}
+
+.cmdcam{
+	text-decoration: none;
+}
+.cmdcam:hover{
+    color: white;
+}
+
+.boxpartenaire{
+	padding: 25px;
+}
+.boxpartenaire:hover{
+	background-color: red;
+}
+
+.boxcontact{
+	padding: 25px;
+}
+.boxcontact:hover{
+	background-color: red;
+}
+
+.boxapropos{
+	padding: 25px;
+}
+.boxapropos:hover{
+	background-color: red;
+}
+
+.boxaccueil{
+	padding: 25px;
+}
+.boxaccueil:hover{
+	background-color: darkblue;
+
+}
+
+.boxconnexion{
+	padding: 25px;
+}
+.boxconnexion:hover{
+	background-color: darkblue;
+
+}
+.boxclasses{
+	padding: 25px;
+
+}
+.boxclasses:hover{
+	background-color: darkblue;
+		
+}
+
+.boxcam{
+	padding: 25px;
+
+}
+.boxcam:hover{
+	background-color: darkblue;
+		
+}
+
+td{
+	    text-align: center;
+}
+table{
+	margin-left:auto; 
+    margin-right:auto;
+}
+
+#conteneur{
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 50px;
+}
+
+.mail{
+	text-align: center;
+}
+
+.gps{
+	text-align: center;
+}
+
+.phone{
+text-align: center;
+}
+.mailimg{
+	width: 50px;
+}
+
+.gpsimg{
+	width: 50px;
+}
+
+.phoneimg{
+	width: 50px;
+}
+
+.nostyle{
+	text-decoration: none;
+	color: black;
+}
+
+.styletexte{
+	color: darkblue;
+	text-decoration: none;
+}
+.styletexte:hover{
+	color: darkblue;
+	text-decoration: underline 1px darkblue;
+}
+
+.black{
+	background-color: black;
+}
+
+.cameracentre{
+	margin: auto;
+	display:block ;
+}
+
+#video {
+        border: 1px solid black;
+        width: 320px;
+        height: 240px;
+    }
+#photo {
+        border: 1px solid black;
+        width: 320px;
+        height: 240px;
+}
+
+ #canvas {
+        display: none;
+ }
+
+    .camera {
+        width: 340px;
+        display: inline-block;
+    }
+
+    .output {
+        width: 340px;
+        display: inline-block;
+    }
+
+    #startbutton {
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 36px;
+        padding: 5px;
+        background-color: darkblue;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        color: rgba(255, 255, 255, 1.0);
+        cursor: pointer;
+    }
+
+    .contentarea {
+        font-size: 16px;
+        font-family: Arial;
+        text-align: center;
+        display: box;
+    }
+	
