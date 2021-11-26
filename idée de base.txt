@@ -1,8 +1,0 @@
-compte conexion etablissement
-classe a choisir 
-trombinoscope de la classe choisi
-photo sauvegarder et afficher dans la classe 
-
-
-compte élève 
-affiche ça photo et celle de sa classe
